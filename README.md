@@ -12,9 +12,7 @@ Here we extend the work of Donahue. We only focused on SpecGAN and did not put e
 
 - we use [invertible time-frequency representations of audio](#1-data-scaling-and-normalization), so that the generated audio does not suffer the significant distortion introduced by approximate inversion methods.
 
-- we use sub-pixel convolution instead of transposed convolution to up-sample audio, as sub-pixel convolution is less prone to checkerboard artifacts (see section 3.3 of [the Donahue paper](wavegan.pdf)) than transpose convolution.
-
-- we use sub-pixel convolution (see figure 1) instead of transposed convolution to up-sample audio, as sub-pixel convolution is less prone to checkerboard artifacts than transpose convolution.
+- we use sub-pixel convolution (see figure 1) instead of transposed convolution to up-sample audio, as sub-pixel convolution is less prone to checkerboard artifacts (see section 3.3 of [the Donahue paper](wavegan.pdf)) than transposed convolution.
 
 - we experimented with discrete cosine transformation (DCT) in addition to discrete Fourier transformation (DFT). DCT’s outputs are purely real and may be better suited for conventional deep learning architectures.
 
