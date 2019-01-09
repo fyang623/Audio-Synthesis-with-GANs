@@ -9,7 +9,7 @@ For details of our work, please refer to our project report here.
 As an attempt to adapt image-generating GANs to audio, Donahue et al. proposed two different approaches to generating fixed-length audio segments based on the DCGAN architecture: SpecGAN and WaveGAN. SpecGAN operates on image-like 2D magnitude spectrograms of audio, but the process of converting audio into such spectrograms lacks an inverse, as phase information is discarded. WaveGAN instead operates on raw audio waveforms; however, artifacts caused by convolutional operations become more troublesome to mitigate in the audio domain. 
 
 Here we extend the work of Donahue. We only focused on SpecGAN and did not put efforts on WaveGAN as we believed frequency information is more representative of human sound perception. The main improvements we made over SpecGAN are summarized below.
-- we use [invertible time-frequency representations](#1-data-scaling-and-normalization) of audio, so that the generated audio does not suffer the significant distortion introduced by approximate inversion methods.
+- we use [invertible time-frequency representations of audio](#1-data-scaling-and-normalization), so that the generated audio does not suffer the significant distortion introduced by approximate inversion methods.
 - we use sub-pixel convolution instead of transposed convolution to upsample audio, as sub-pixel convolution is less prone to checkerboard artifacts than transpose convolution.
 - we experimented with discrete cosine transformation (DCT) in addition to discrete Fourier transformation (DFT). DCT’s outputs are purely real and may be better suited for conventional deep learning architectures.
 
