@@ -26,10 +26,11 @@ As with SpecGAN, we consider the problem of generating audio clips consisting of
 #### 1. Data Scaling and Normalization
 The magnitudes of the DFT and DCT outputs are scaled roughly logarithmically both to simulate human auditory perception and to better bound the range of values. To do so without affecting phase information, we use an invertible function that maps 0 to itself:
 
-&nbsp;<img src="figs/2.png" alt="data scaling" width="300"/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="figs/2.png" alt="data scaling" width="300"/> 
+
 along with its inverse:
 
-<img src="figs/3.png" alt="inverse of data scaling" width="300"/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="figs/3.png" alt="inverse of data scaling" width="300"/> 
 
 Further, the magnitudes of the data are rescaled on a per-frequency basis: individually for each frequency, all values are divided by the maximal magnitude across the entire training dataset. Thus, all values are scaled into the range \[−1, 1\], matching the range of the tanh activation function used for the generator. These values are then multiplied by 0.9 to further limit this range, thereby allowing the generator to predict all possible values present in the dataset without saturating its output activations.
 
